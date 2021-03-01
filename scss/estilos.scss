@@ -1,0 +1,191 @@
+@import "general/_variables.scss";
+@import "extensiones/_mixin.scss";
+@import "extensiones/_extend.scss";
+@import "secciones/_nav.scss";
+@import "secciones/_footer.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: $fontPrincipal;
+    background-color: $colorBody;
+}
+
+nav {
+    .menu {
+        @extend %menu;
+    }
+
+    .menu__lista {
+        @extend %menu__lista;
+    }
+
+    .menu__items {
+        @extend %menu__items;
+    }
+
+    a {
+        text-decoration: $textDecoration;
+        color: $colorSecundario;
+
+        &:hover {
+            color: $colorPrincipal;
+        }
+    }
+}
+
+section {
+    .principal {
+        @include dimensiones (80%, 80vh);
+        @include flex (flex, none, none, row);
+    }
+
+    .principal__caja--1, .principal__caja--2 {
+        @extend %principal__caja;
+        @include flex (flex, center, flex-end, column);
+    }
+
+    .principal__titulo--1, .principal__titulo--2 {
+        font-size: $fontSizePrincipal;
+        text-align: center;
+        font-weight: $fontNegrita;
+        color: $colorPrincipal;
+    }
+
+    .principal__imagen {
+        @include dimensiones (100%, 100%);
+    }
+}
+
+section {
+    .proyecto {
+        @include dimensiones (80%, auto);
+        padding: 0px 0px 20px 0px;
+    }
+
+    .proyecto__titulo {
+        @extend %titulos;
+    }
+
+    .proyecto__parrafo {
+        font-size: $fontSizeParrafos;
+        text-align: center;
+        @include espaciado (10px, 10px);
+        font-size: $fontLiviana;
+    }
+}
+
+section {
+    .sumarse {
+        @include dimensiones (80%, auto);
+    }
+    
+    .sumarse__titulo {
+        @extend %titulos;
+    }
+    
+    .sumarse__grid {
+        @extend %sumarse__grid;
+    }
+    
+    .sumarse__grid div {
+        height: 40vh;
+        @include flex (flex, center, space-around, column);
+        text-align: center;
+        border: 2px black;
+        border-style: solid;
+    }
+    
+    .sumarse__grid__paso--4  {
+        grid-column: 1/4;
+        justify-self: center;
+        text-align: center;
+        width: 50%;
+    }
+    
+    .sumarse__grid p {
+        font-size: 20px;
+    }
+}
+
+section {
+    .nuevos {
+        @include dimensiones (80%, auto);
+    }
+
+    .nuevos__grid {
+        @extend %nuevos__grid;
+        transition: transform 1s;
+        grid-template-areas: 
+        "img1 img2 img4 img4"
+        "img3 img3 img5 img6"
+        "img7 img8 img8 img9"
+        "img7 img8 img8 img9";
+
+        &:hover {
+            transform: scale(1.1,1.1);
+            border: #ffffff 4px;
+            border-style: solid;
+        }
+    }
+
+    img {
+        @extend %img;
+    }
+
+    .nuevos__img--1 {
+        grid-area: img1;
+    }
+
+    .nuevos__img--2 {
+        grid-area: img2;
+    }
+
+    .nuevos__img--3 {
+        grid-area: img3;
+    }
+    
+    .nuevos__img--4 {
+        grid-area: img4;
+    }
+
+    .nuevos__img--5 {
+        grid-area: img5;
+    }
+
+    .nuevos__img--6 {
+        grid-area: img6;
+    }
+
+    .nuevos__titulo {
+        @extend %titulos;
+    }
+}
+
+footer{
+    .footer {
+        @extend %footer;
+    }
+
+    .footer__caja--1, .footer__caja--2 {
+        @extend %footer__caja;
+    }
+
+    .footer__caja--1__parrafo, .footer__caja--2__parrafo, .footer__caja--2__parrafo--hover {
+        font-size: $fontSizeFooter;
+        color: $colorSecundario;
+        font-weight: $fontNegrita;
+    }
+
+    .footer__caja--2 .footer__caja--2__texto {
+        text-decoration: $textDecoration;
+        color: $colorSecundario;
+    }
+
+    .footer__caja--2__parrafo--hover:hover .footer__caja--2__texto {
+        color: $colorMenu;
+    }
+}

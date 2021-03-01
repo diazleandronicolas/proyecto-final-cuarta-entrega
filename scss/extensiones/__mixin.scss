@@ -1,0 +1,16 @@
+@mixin flex ($flex, $align, $justify, $direction) {
+    display: $flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+@mixin dimensiones ($widht, $height) {
+    width: $widht;
+    height: $height;
+}
+
+@mixin espaciado ($padding, $margin) {
+    padding: $padding;
+    margin: $margin;
+}

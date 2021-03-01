@@ -1,0 +1,23 @@
+@import "general/__variables.scss";
+
+%menu {
+    width: 20%;
+    height: 100%;
+    background-color: $colorMenu;
+    position: fixed;
+    right: 0px;
+}
+
+%menu__lista {
+    display: block;
+    list-style: none;
+    position: absolute;
+    top: 22%;
+}
+
+%menu__items {
+    margin: 10px;
+    font-size: $fontSizeMenu;
+    border-bottom-style: solid;
+}
+

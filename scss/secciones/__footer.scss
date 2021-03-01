@@ -1,0 +1,16 @@
+@import "general/__variables.scss";
+@import "extensiones/__mixin.scss";
+
+%footer__caja {
+    width: 50%;
+    @include flex (flex, center, space-evenly, column);
+    flex-wrap: wrap;
+}
+
+%footer {
+    @include flex (flex, center, space-evenly, column);
+    flex-wrap: wrap;
+    height: 30vh;
+    width: 80%;
+    background-color: $colorPrincipal;
+}
